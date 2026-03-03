@@ -43,7 +43,7 @@ MODBUS Point Type is 03: HOLDING REGISTER
 
 I implemented DHCP with a fallback static address and mdns, RPC to talk to the M4 Co-Processor
 
-The M7 is doing all the Heavie lifting while the M4 is doing the slow writes to the 
+The M7 is doing all the heavie lifting while the M4 is doing the slow writes to the 
 Antrax devices.
 
 I used RPC asynchronous here.
