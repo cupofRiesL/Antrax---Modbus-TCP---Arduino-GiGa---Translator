@@ -66,8 +66,26 @@ void setup() {
   digitalWrite(LED, LOW);
   Serial2.begin(9600);  // First MultiBox
   Serial3.begin(9600);  // Second MultiBox
-  Serial2.println("{+}Modus=2");
-  Serial3.println("{+}Modus=2");
+  Serial2.println("{1} Modus = 2");
+  delay(20);
+  Serial2.println("{2} Modus = 2");
+  delay(20);
+  Serial2.println("{3} Modus = 2");
+  delay(20);
+  Serial2.println("{4} Modus = 2");
+  delay(20);
+  Serial2.println("{5} Modus = 2");
+  delay(20);
+  Serial3.println("{1} Modus = 2");
+  delay(20);
+  Serial3.println("{2} Modus = 2");
+  delay(20);
+  Serial3.println("{3} Modus = 2");
+  delay(20);
+  Serial3.println("{4} Modus = 2");
+  delay(20);
+  Serial3.println("{5} Modus = 2");
+
 
   /*
   The GiGa comes with a Naming shift in the UART "Serial" Ports
