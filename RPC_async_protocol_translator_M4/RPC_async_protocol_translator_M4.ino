@@ -59,6 +59,7 @@ uint16_t Register0Value = 0;
 uint16_t ch[10];
 uint16_t old_ch[10];
 int LED = 86;
+int cooldown = 60; // multibox processing break
 
 void setup() {
   RPC.begin();
@@ -67,25 +68,24 @@ void setup() {
   Serial2.begin(9600);  // First MultiBox
   Serial3.begin(9600);  // Second MultiBox
   Serial2.println("{1} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial2.println("{2} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial2.println("{3} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial2.println("{4} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial2.println("{5} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial3.println("{1} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial3.println("{2} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial3.println("{3} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial3.println("{4} Modus = 2");
-  delay(20);
+  delay(cooldown);
   Serial3.println("{5} Modus = 2");
-
 
   /*
   The GiGa comes with a Naming shift in the UART "Serial" Ports
@@ -116,7 +116,7 @@ void requestOutChange() {
   digitalWrite(LED, HIGH);
   //Serial2.println(Register0Value);
 
-/*The following code is absolutely overkill in terms of speed but I wanted to solve this Problem in this way.
+  /*The following code is absolutely overkill in terms of speed but I wanted to solve this Problem in this way.
   I know that the Bottleneck is the 9600 Bauds on the UART but I like the code I wrote to sort the communication*/
 
 
@@ -159,43 +159,53 @@ ch[9]           = 0000000000000001
           switch (i) {         // switch by channel
             case 0:
               //construct controlstring here ch0 off
-              Serial2.println("{1}off");
+              Serial2.println("{1} off");
+              delay(cooldown);
               break;
             case 1:
               //construct controlstring here ch1 off
-              Serial2.println("{2}off");
+              Serial2.println("{2} off");
+              delay(cooldown);
               break;
             case 2:
               //construct controlstring here ch2 off
-              Serial2.println("{3}off");
+              Serial2.println("{3} off");
+              delay(cooldown);
               break;
             case 3:
               //construct controlstring here ch3 off
-              Serial2.println("{4}off");
+              Serial2.println("{4} off");
+              delay(cooldown);
               break;
             case 4:
               //construct controlstring here ch4 off
-              Serial2.println("{5}off");
+              Serial2.println("{5} off");
+              delay(cooldown);
               break;
             case 5:
               //construct controlstring here ch5 off
-              Serial3.println("{1}off");
+              Serial3.println("{1} off");
+              delay(cooldown);
               break;
             case 6:
               //construct controlstring here ch6 off
-              Serial3.println("{2}off");
+              Serial3.println("{2} off");
+              delay(cooldown);
               break;
             case 7:
               //construct controlstring here ch7 off
-              Serial3.println("{3}off");
+              Serial3.println("{3} off");
+              delay(cooldown);
               break;
             case 8:
               //construct controlstring here ch8 off
-              Serial3.println("{4}off");
+              Serial3.println("{4} off");
+              delay(cooldown);
               break;
             case 9:
               //construct controlstring here ch9 off
-              Serial3.println("{5}off");
+              Serial3.println("{5} off");
+              delay(cooldown);
               break;
           }
           break;
@@ -203,43 +213,53 @@ ch[9]           = 0000000000000001
           switch (i) {  // switch by channel again
             case 0:
               //construct controlstring here ch0 on
-              Serial2.println("{1}on");
+              Serial2.println("{1} on");
+              delay(cooldown);
               break;
             case 1:
               //construct controlstring here ch1 on
-              Serial2.println("{2}on");
+              Serial2.println("{2} on");
+              delay(cooldown);
               break;
             case 2:
               //construct controlstring here ch2 on
-              Serial2.println("{3}on");
+              Serial2.println("{3} on");
+              delay(cooldown);
               break;
             case 3:
               //construct controlstring here ch3 on
-              Serial2.println("{4}on");
+              Serial2.println("{4} on");
+              delay(cooldown);
               break;
             case 4:
               //construct controlstring here ch4 on
-              Serial2.println("{5}on");
+              Serial2.println("{5} on");
+              delay(cooldown);
               break;
             case 5:
               //construct controlstring here ch5 on
-              Serial3.println("{1}on");
+              Serial3.println("{1} on");
+              delay(cooldown);
               break;
             case 6:
               //construct controlstring here ch6 on
-              Serial3.println("{2}on");
+              Serial3.println("{2} on");
+              delay(cooldown);
               break;
             case 7:
               //construct controlstring here ch7 on
-              Serial3.println("{3}on");
+              Serial3.println("{3} on");
+              delay(cooldown);
               break;
             case 8:
               //construct controlstring here ch8 on
-              Serial3.println("{4}on");
+              Serial3.println("{4} on");
+              delay(cooldown);
               break;
             case 9:
               //construct controlstring here ch9 on
-              Serial3.println("{5}on");
+              Serial3.println("{5} on");
+              delay(cooldown);
               break;
           }
           break;
