@@ -51,3 +51,7 @@ I used RPC asynchronous here.
 [Trigger warning: The code is not nice and might have issues but its working. 
                                                          There might be leftovers from Testing]
 #############################################################################################*/
+
+
+EDIT Monday 16. March 2026: I'm actively using it in a Project with Codesys on a Revolution Pi 4
+
