@@ -59,7 +59,7 @@ uint16_t Register0Value = 0;
 uint16_t ch[10];
 uint16_t old_ch[10];
 int LED = 86;
-int cooldown = 60; // multibox processing break
+int cooldown = 80; // multibox processing break
 
 void setup() {
   RPC.begin();
